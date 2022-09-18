@@ -1,6 +1,1 @@
-public struct Persistence {
-    public private(set) var text = "Hello, World!"
-
-    public init() {
-    }
-}
+@_exported import RealmSwift
