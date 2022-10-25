@@ -14,7 +14,7 @@ let package = Package(
             targets: ["Persistence"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/SparrowTek/realm-swift", from: "10.28.0"),
+        .package(url: "https://github.com/realm/realm-swift", .upToNextMajor(from: "10.32.0"))
     ],
     targets: [
         .target(
