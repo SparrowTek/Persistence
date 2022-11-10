@@ -36,6 +36,9 @@ public struct Storage: Storing {
     
     public static var realmConfiguration: Realm.Configuration {
         guard let config = config else { fatalError("StorageConfig is nil") }
+        #if targetEnvironment(simulator)
+        return Realm.Configuration(inMemoryIdentifier: "\(config.nameSpace).persistence.inmemory")
+        #else
         return Realm.Configuration(
             fileURL: Storage.realmFileURL("\(config.nameSpace).realm"),
             schemaVersion: config.realmSchemaVersion,
@@ -46,6 +49,7 @@ public struct Storage: Storing {
                 return (totalBytes > fiftyMB) && (usedBytes < totalBytes / 2)
             }
         )
+        #endif
     }
     
     public static func setup(config: StoringConfig) {
