@@ -14,13 +14,13 @@ let package = Package(
             targets: ["Persistence"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/realm/realm-swift", .upToNextMajor(from: "10.32.0"))
+        .package(url: "https://github.com/realm/realm-swift.git", .upToNextMajor(from: "10.0.0")),
     ],
     targets: [
         .target(
             name: "Persistence",
             dependencies: [
                 .product(name: "RealmSwift", package: "realm-swift"),
-            ])
+            ]),
     ]
 )
