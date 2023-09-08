@@ -5,9 +5,9 @@ import PackageDescription
 let package = Package(
     name: "Persistence",
     platforms: [
-        .iOS(.v15),
-        .macOS(.v10_15),
-        .watchOS(.v6),
+        .iOS(.v14),
+        .macOS(.v10_14),
+        .watchOS(.v5),
     ],
     products: [
         .library(
