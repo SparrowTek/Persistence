@@ -96,4 +96,10 @@ public struct ObjectManager<T: Model> {
             $0.delete(objects)
         }
     }
+    
+    public func delete(_ object: T) async throws {
+        try await write {
+            $0.delete(object)
+        }
+    }
 }
